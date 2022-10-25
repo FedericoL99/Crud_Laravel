@@ -73,7 +73,7 @@ class ProductoController extends Controller
     {
         //
         $productos=Producto::find($id);
-        return view('actualizar',compact('productos'));
+        return view('actualizar')->with('productos',$productos);
     }
 
     /**
@@ -86,6 +86,12 @@ class ProductoController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $productos=Producto::find($id);
+        $productos->nombre=$request->nombre;
+        $productos->description=$request->description;
+        $productos->precio=$request->precio;
+        $productos->save();
+        return redirect()->route('productos.index');
     }
 
     /**

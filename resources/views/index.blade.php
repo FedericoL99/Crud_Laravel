@@ -26,9 +26,7 @@
                     <td>{{$producto->description}}</td>
                     <td>{{$producto->precio}}</td>
                     <td>
-                        <a href="{{route('productos.edit',$producto->id)}}" method="post">
-                            @method('PUT')
-                            @csrf
+                        <a href="{{route('productos.edit',$producto->id)}}">
                             <button type="submit">Editar</button>
                         </a>
                         <form action="{{route('productos.destroy',$producto->id)}}" method="post">

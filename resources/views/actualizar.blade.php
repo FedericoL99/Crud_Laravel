@@ -7,7 +7,8 @@
     <title>Actualizar</title>
 </head>
 <body>
-    <form action="{{route('productos.edit')}}" method="POST">
+    <form action="{{route('productos.update',$productos->id)}}" method="POST">
+        @method('PUT')
         @csrf
         <label>Nombre</label>
         <input id="nombre" name="nombre" type="text" value="{{$productos->id}}"><br>
@@ -15,7 +16,7 @@
         <input id="description" name="description" type="text" value="{{$productos->description}}"><br>
         <label>Precio</label>
         <input name="precio" type="precio" value="{{$productos->precio}}"><br>
-        <input type="submit" name="Enviar">
+        <input type="submit" name="Enviar" value="Editar">
     </form>
 </body>
 </html>
