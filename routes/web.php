@@ -14,3 +14,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::resource('productos','\App\Http\Controllers\ProductoController');
+Route::get('download-pdf','\App\Http\Controllers\ProductoController@generar_pdf')->name('descargar-pdf');

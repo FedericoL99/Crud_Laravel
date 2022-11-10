@@ -11,7 +11,7 @@
         @method('PUT')
         @csrf
         <label>Nombre</label>
-        <input id="nombre" name="nombre" type="text" value="{{$productos->id}}"><br>
+        <input id="nombre" name="nombre" type="text" value="{{$productos->nombre}}"><br>
         <label>Descripcion</label>
         <input id="description" name="description" type="text" value="{{$productos->description}}"><br>
         <label>Precio</label>

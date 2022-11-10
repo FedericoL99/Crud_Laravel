@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Producto;
+use Barryvdh\DomPDF\Facade as PDF;
 
 use Illuminate\Http\Request;
 use Productos;
@@ -105,5 +106,11 @@ class ProductoController extends Controller
         $producto=Producto::find($id);
         $producto->delete();
         return redirect()->route('productos.index');
+    }
+
+    public function generar_pdf(){
+        $productos=Producto::all();
+        $pdf=\PDF::loadView('generar_pdf',compact('productos'));
+        return $pdf->download('listado-productos.pdf');
     }
 }

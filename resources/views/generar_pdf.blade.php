@@ -1,0 +1,21 @@
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($productos as $producto)
+                <tr>
+                    <td>{{$loop->iteration}}</td>
+                    <td>{{$producto->nombre}}</td>
+                    <td>{{$producto->description}}</td>
+                    <td>{{$producto->precio}}</td>
+                </tr>
+            @endforeach
+        </tbody>
+</body>
+</html>

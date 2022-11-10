@@ -8,7 +8,7 @@
 </head>
 <body>
     <a href="{{route('productos.create')}}">Crear productos</a>
-
+    <a href="{{route('descargar-pdf')}}">Generar listado productos</a>
     <table>
         <thead>
             <tr>
